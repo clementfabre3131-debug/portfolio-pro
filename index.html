@@ -157,16 +157,26 @@
 
         <section class="grid grid-cols-1 md:grid-cols-4 gap-6">
             
-            <div class="bento-card p-8 md:col-span-2">
-                <h3 class="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-8">Mon savoir faire</h3>
+<div class="bento-card p-8 md:col-span-2">
+                <h3 class="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-8 text-center">Mon savoir faire</h3>
                 <div class="flex flex-wrap gap-4 justify-center">
-                    <div class="keycap key-py"><i data-lucide="terminal"></i><span class="mt-1">PY</span></div>
-                    <div class="keycap key-cpp"><i data-lucide="binary"></i><span class="mt-1">C++</span></div>
-                    <div class="keycap key-stm"><i data-lucide="cpu"></i><span class="mt-1">CAO/DAO</span></div>
-                    <div class="keycap bg-gray-700 text-white"><i data-lucide="ruler"></i><span class="mt-1 text-[8px]">Analyse</span></div>
-                    <div class="keycap bg-blue-700 text-white"><i data-lucide="ruler"></i><span class="mt-1 text-[8px]">Rédaction</span></div>
-                    <div class="keycap bg-brown-700 text-white"><i data-lucide="ruler"></i><span class="mt-1 text-[8px]">Autonomie</span></div>
-                    <div class="keycap bg-pink-700 text-white"><i data-lucide="ruler"></i><span class="mt-1 text-[8px]">Gestion</span></div>
+                    <div class="keycap key-py" title="Python"><i data-lucide="terminal"></i><span class="mt-1">PY</span></div>
+                    <div class="keycap key-cpp" title="C++"><i data-lucide="binary"></i><span class="mt-1">C++</span></div>
+                    <div class="keycap key-stm" title="Conception assistée"><i data-lucide="layers"></i><span class="mt-1">CAO/DAO</span></div>
+                    
+                    <div class="keycap bg-gray-700 text-white" title="Analyse de données / pannes">
+                        <i data-lucide="search"></i><span class="mt-1 text-[8px]">Analyse</span>
+                    </div>
+                    <div class="keycap bg-blue-600 text-white" title="Rédaction de rapports techniques">
+                        <i data-lucide="pen-tool"></i><span class="mt-1 text-[8px]">Rédaction</span>
+                    </div>
+                    
+                    <div class="keycap bg-orange-700 text-white" title="Autonomie et initiative">
+                        <i data-lucide="user-check"></i><span class="mt-1 text-[8px]">Autonomie</span>
+                    </div>
+                    <div class="keycap bg-purple-700 text-white" title="Gestion de projet et organisation">
+                        <i data-lucide="clipboard-check"></i><span class="mt-1 text-[8px]">Gestion</span>
+                    </div>
                 </div>
             </div>
 
@@ -196,4 +206,5 @@
     <script>lucide.createIcons();</script>
 </body>
 </html>
+
 
