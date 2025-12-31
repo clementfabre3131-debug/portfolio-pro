@@ -31,7 +31,13 @@
         }
         .bento-card:hover { border-color: rgba(139, 92, 246, 0.5); transform: translateY(-5px); }
 
-        /* ANIMATIONS */
+        .illustration-2d {
+            width: 100%; height: 180px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(167, 139, 250, 0.05));
+            display: flex; align-items: center; justify-content: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
         @keyframes gear-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         .animate-gear { animation: gear-spin 4s linear infinite; }
 
@@ -56,7 +62,7 @@
                 <h1 class="text-4xl font-bold tracking-tight mb-2">Clément <span class="gradient-text">Fabre</span></h1>
                 <p class="text-indigo-400 font-medium mb-4 text-lg">Apprenti Ingénieur en Systèmes Embarqués & Électronique</p>
                 <p class="text-gray-400 leading-relaxed text-sm">
-                    Étudiant au CESI S3E après un BUT GEII. Spécialiste en analyse de circuits et conception électronique. Actuellement en mission chez <strong>Trescal</strong> pour le groupe Renault[cite: 224, 239].
+                    Étudiant au CESI S3E après un BUT GEII. Spécialiste en analyse de circuits et conception électronique. Actuellement en mission chez <strong>Trescal</strong> pour le groupe Renault[cite: 224, 247].
                 </p>
             </div>
         </div>
@@ -66,7 +72,7 @@
                 <a href="mailto:fabreclement498@gmail.com" class="p-4 bg-white/5 rounded-2xl hover:bg-indigo-500 transition-all"><i data-lucide="mail"></i></a>
                 <a href="https://www.linkedin.com/in/cl%C3%A9ment-fabre-127822265/" target="_blank" class="p-4 bg-white/5 rounded-2xl hover:bg-indigo-500 transition-all"><i data-lucide="linkedin"></i></a>
             </div>
-            <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest text-center">Stage Janvier 2026</p>
+            <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest text-center leading-tight">En recherche de<br>stage pour 2026 [cite: 221]</p>
         </div>
 
         <div class="bento-card p-8 md:col-span-4">
@@ -74,13 +80,13 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div class="relative pl-8 border-l-2 border-indigo-500/50">
                     <div class="absolute -left-[11px] top-0 w-5 h-5 bg-indigo-500 rounded-full border-4 border-[#030014]"></div>
-                    <p class="text-indigo-400 font-bold text-xs mb-1 uppercase tracking-tighter">2025 — 2028</p>
-                    <h4 class="text-lg font-bold">Cycle Ingénieur - S3E</h4>
+                    <p class="text-indigo-400 font-bold text-xs mb-1 uppercase tracking-tighter">2025 — 2028 [cite: 225]</p>
+                    <h4 class="text-lg font-bold text-white">Cycle Ingénieur - S3E</h4>
                     <p class="text-gray-400 text-sm italic">CESI Toulouse — Systèmes Électriques & Électroniques [cite: 227]</p>
                 </div>
                 <div class="relative pl-8 border-l-2 border-white/10">
                     <div class="absolute -left-[11px] top-0 w-5 h-5 bg-gray-700 rounded-full border-4 border-[#030014]"></div>
-                    <p class="text-gray-500 font-bold text-xs mb-1 uppercase tracking-tighter">2023 — 2025</p>
+                    <p class="text-gray-500 font-bold text-xs mb-1 uppercase tracking-tighter">2023 — 2025 [cite: 228]</p>
                     <h4 class="text-lg font-bold text-gray-300">BUT GEII</h4>
                     <p class="text-gray-500 text-sm italic">IUT Paul Sabatier — Génie Électrique & Informatique Industrielle [cite: 229]</p>
                 </div>
@@ -88,76 +94,112 @@
         </div>
 
         <div class="bento-card p-8 md:col-span-4">
-            <h3 class="text-xl font-bold mb-8 flex items-center gap-3 text-green-400 uppercase tracking-wider"><i data-lucide="briefcase"></i> Missions d'Alternance (Trescal)</h3>
+            <h3 class="text-xl font-bold mb-8 flex items-center gap-3 text-green-400 uppercase tracking-wider"><i data-lucide="briefcase"></i> Expériences en Alternance</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div class="space-y-6">
-                    <h4 class="font-bold text-indigo-300">Ingénieur d'Études (2025-2028)</h4>
+                    <div class="flex justify-between items-start">
+                        <h4 class="font-bold text-indigo-300">Ingénieur d'Études</h4>
+                        <span class="text-[10px] bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded">2025 - 2028</span>
+                    </div>
+                    <p class="text-xs font-semibold text-gray-500 uppercase tracking-widest">Trescal - Renault Lardy Centre Technique d'Essais [cite: 247]</p>
                     <ul class="space-y-3 text-sm text-gray-400">
-                        <li class="flex gap-2 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 shrink-0"></i> Étude du fonctionnement des cycleurs / simulateurs de batterie[cite: 247].</li>
-                        <li class="flex gap-2 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 shrink-0"></i> Étude technique sur les Power Electronic Blocks des véhicules électriques[cite: 248].</li>
-                        <li class="flex gap-2 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 shrink-0"></i> Pilotage de l'installation de bancs d'essai de cyclage sur site client[cite: 249].</li>
+                        <li class="flex gap-2 items-start"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 shrink-0 mt-0.5"></i> Étude du principe de fonctionnement d'un cycleur / simulateur de batterie[cite: 247].</li>
+                        <li class="flex gap-2 items-start"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 shrink-0 mt-0.5"></i> Étude technique sur les Power Electronic Blocks des véhicules électriques[cite: 248].</li>
+                        <li class="flex gap-2 items-start"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 shrink-0 mt-0.5"></i> Pilotage de la modification / installation de bancs d'essai sur site client[cite: 249].</li>
                     </ul>
                 </div>
                 <div class="space-y-6">
-                    <h4 class="font-bold text-indigo-300">Technicien Métrologue (2023-2025)</h4>
+                    <div class="flex justify-between items-start">
+                        <h4 class="font-bold text-indigo-300">Technicien Métrologue</h4>
+                        <span class="text-[10px] bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded">2023 - 2025</span>
+                    </div>
+                    <p class="text-xs font-semibold text-gray-500 uppercase tracking-widest">Trescal - Toulouse [cite: 256]</p>
                     <ul class="space-y-3 text-sm text-gray-400">
-                        <li class="flex gap-2 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 shrink-0"></i> Maîtrise d'appareils de mesure complexes (Analyseur de spectre, oscilloscopes)[cite: 258].</li>
-                        <li class="flex gap-2 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 shrink-0"></i> Analyse et diagnostic de pannes sur systèmes électroniques variés[cite: 261].</li>
+                        <li class="flex gap-2 items-start"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 shrink-0 mt-0.5"></i> Maîtrise d'appareils de mesure complexes (Analyseur de spectre, oscilloscopes)[cite: 258].</li>
+                        <li class="flex gap-2 items-start"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 shrink-0 mt-0.5"></i> Analyse et diagnostic de pannes sur systèmes électroniques variés[cite: 261].</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <div class="bento-card md:col-span-2">
-            <div class="h-40 bg-gradient-to-br from-green-500/10 to-transparent flex items-center justify-center">
-                <i data-lucide="settings" class="w-20 h-20 text-green-400 animate-gear"></i>
-            </div>
-            <div class="p-8">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-xl font-bold">Automatisation Modules CSM</h3>
-                    <span class="text-[10px] bg-green-500/10 text-green-500 px-2 py-1 rounded border border-green-500/20 font-bold tracking-tighter">PYTHON</span>
+        <div class="bento-card p-8 md:col-span-2 flex flex-col gap-6">
+            <h3 class="text-xl font-bold flex items-center gap-3 text-yellow-500 uppercase tracking-wider"><i data-lucide="brain"></i> Mes Soft Skills</h3>
+            <div class="space-y-6">
+                <div class="flex gap-4 items-start">
+                    <div class="p-3 bg-yellow-500/10 rounded-xl"><i data-lucide="layout-list" class="text-yellow-500 w-5 h-5"></i></div>
+                    <p class="text-xs text-gray-400">Compétences clés en <strong>organisation</strong> et <strong>rigueur méthodique</strong> pour structurer les projets[cite: 186].</p>
                 </div>
-                <p class="text-gray-400 text-sm leading-relaxed">Développement d'outils Python pour la vérification et communication automatique de modules d'acquisition industrielle[cite: 268, 269].</p>
+                <div class="flex gap-4 items-start">
+                    <div class="p-3 bg-yellow-500/10 rounded-xl"><i data-lucide="search" class="text-yellow-500 w-5 h-5"></i></div>
+                    <p class="text-xs text-gray-400">Sens de la <strong>précision</strong> pour garantir la qualité des résultats et approche <strong>proactive</strong>[cite: 187, 188].</p>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="p-3 bg-yellow-500/10 rounded-xl"><i data-lucide="users" class="text-yellow-500 w-5 h-5"></i></div>
+                    <p class="text-xs text-gray-400">Qualités en <strong>communication</strong> et <strong>travail collaboratif</strong> au sein de l'équipe[cite: 189].</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bento-card p-8 md:col-span-2 flex flex-col gap-6">
+            <h3 class="text-xl font-bold flex items-center gap-3 text-orange-500 uppercase tracking-wider"><i data-lucide="plus-circle"></i> Mon Plus</h3>
+            <div class="space-y-6">
+                <div class="flex gap-4 items-center">
+                    <div class="p-3 bg-orange-500/10 rounded-xl"><i data-lucide="lightbulb" class="text-orange-500 w-5 h-5"></i></div>
+                    <p class="text-xs text-gray-400">Esprit d'initiative et grande soif d'apprendre[cite: 191].</p>
+                </div>
+                <div class="flex gap-4 items-center">
+                    <div class="p-3 bg-orange-500/10 rounded-xl"><i data-lucide="presentation" class="text-orange-500 w-5 h-5"></i></div>
+                    <p class="text-xs text-gray-400">Dépassement du cadre théorique par l'exploration technologique autonome[cite: 192].</p>
+                </div>
+                <div class="flex gap-4 items-center border-t border-white/5 pt-4">
+                    <div class="p-3 bg-orange-500/10 rounded-xl"><i data-lucide="camera" class="text-orange-500 w-5 h-5"></i></div>
+                    <p class="text-xs text-gray-400">Photographie (modèle amateur) développant une aisance naturelle et confiance en soi[cite: 193].</p>
+                </div>
             </div>
         </div>
 
         <div class="bento-card md:col-span-2">
-            <div class="h-40 bg-gradient-to-br from-indigo-500/10 to-transparent flex items-center justify-center gap-6">
-                <i data-lucide="circle-dot" class="w-10 h-10 text-indigo-500/30 animate-spin"></i>
-                <i data-lucide="car" class="w-16 h-16 text-indigo-400"></i>
-                <i data-lucide="circle-dot" class="w-10 h-10 text-indigo-500/30 animate-spin"></i>
+            <div class="illustration-2d"><i data-lucide="terminal" class="w-16 h-16 text-green-400/50"></i></div>
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold">Automatisation Boîtiers</h3>
+                    <span class="text-[10px] bg-green-500/10 text-green-500 px-2 py-1 rounded border border-green-500/20 font-bold tracking-tighter uppercase">Python [cite: 241, 269]</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">Vérification, configuration et communication automatique de modules d'acquisition CSM pour Renault[cite: 269].</p>
             </div>
+        </div>
+
+        <div class="bento-card md:col-span-2">
+            <div class="h-40 bg-gradient-to-br from-indigo-500/10 to-transparent flex items-center justify-center gap-6"><i data-lucide="circle-dot" class="w-10 h-10 text-indigo-500/30 animate-spin"></i><i data-lucide="car" class="w-16 h-16 text-indigo-400"></i><i data-lucide="circle-dot" class="w-10 h-10 text-indigo-500/30 animate-spin"></i></div>
             <div class="p-8">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-xl font-bold">Smart Car Bluetooth</h3>
-                    <span class="text-[10px] bg-indigo-500/10 text-indigo-400 px-2 py-1 rounded border border-indigo-500/20 font-bold tracking-tighter">STM32 / C++</span>
+                    <span class="text-[10px] bg-indigo-500/10 text-indigo-400 px-2 py-1 rounded border border-indigo-500/20 font-bold tracking-tighter uppercase">STM32 / C++ [cite: 272]</span>
                 </div>
-                <p class="text-gray-400 text-sm leading-relaxed">Conception matérielle et programmation sur Nucleo pour le pilotage d'un véhicule autonome[cite: 271, 273].</p>
+                <p class="text-gray-400 text-sm leading-relaxed">Conception matérielle et logicielle d'un véhicule autonome piloté par Bluetooth[cite: 27, 271, 273].</p>
             </div>
         </div>
 
         <div class="bento-card md:col-span-2">
             <div class="h-40 bg-black/40 flex items-center justify-center">
-                <svg width="240" height="80" viewBox="0 0 240 80">
-                    <path class="ecg-line" d="M0 40 L80 40 L95 10 L110 70 L130 40 L240 40" fill="none" stroke="#ef4444" stroke-width="3" />
-                </svg>
+                <svg width="240" height="80" viewBox="0 0 240 80"><path class="ecg-line" d="M0 40 L80 40 L95 10 L110 70 L130 40 L240 40" fill="none" stroke="#ef4444" stroke-width="3" /></svg>
             </div>
             <div class="p-8">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-xl font-bold">Électrocardiogramme</h3>
-                    <span class="text-[10px] bg-red-500/10 text-red-400 px-2 py-1 rounded border border-red-400/20 font-bold tracking-tighter">ÉLECTRONIQUE</span>
+                    <span class="text-[10px] bg-red-500/10 text-red-400 px-2 py-1 rounded border border-red-400/20 font-bold tracking-tighter uppercase">Électronique [cite: 58]</span>
                 </div>
-                <p class="text-gray-400 text-sm leading-relaxed">Conception d'étages de filtrage et d'amplification pour signaux cardiaques bio-électriques[cite: 58, 59].</p>
+                <p class="text-gray-400 text-sm leading-relaxed">Filtrage et amplification des signaux cardiaques pour éliminer les interférences[cite: 58, 59, 60].</p>
             </div>
         </div>
 
         <div class="bento-card p-8 md:col-span-2 flex flex-col justify-center">
-            <h3 class="text-sm font-bold text-gray-500 uppercase mb-8 tracking-widest text-center italic tracking-widest">Expertise Technique</h3>
+            <h3 class="text-sm font-bold text-gray-500 uppercase mb-8 tracking-widest text-center italic tracking-widest uppercase">Expertise Technique</h3>
             <div class="flex flex-wrap justify-center gap-3">
-                <span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold hover:border-indigo-500">Python [cite: 241]</span>
-                <span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold hover:border-indigo-500">C / C++ [cite: 241]</span>
-                <span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold hover:border-indigo-500">Métrologie [cite: 245]</span>
-                <span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold hover:border-indigo-500">STM32 / Nucleo [cite: 272]</span>
+                <span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold hover:border-indigo-500 transition-colors uppercase">Python [cite: 241, 269]</span>
+                <span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold hover:border-indigo-500 transition-colors uppercase">C / C++ [cite: 28, 61, 241]</span>
+                <span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold hover:border-indigo-500 transition-colors uppercase text-white">Métrologie [cite: 245, 252]</span>
+                <span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold hover:border-indigo-500 transition-colors uppercase">STM32 / Nucleo [cite: 272, 273]</span>
             </div>
         </div>
 
