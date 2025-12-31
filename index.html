@@ -21,12 +21,11 @@
             border-radius: 2rem;
             backdrop-filter: blur(12px);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex; flex-direction: column; justify-content: space-between;
+            overflow: hidden;
         }
         .bento-card:hover { border-color: rgba(139, 92, 246, 0.5); transform: translateY(-5px); }
         .gradient-text { background: linear-gradient(90deg, #a78bfa, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .reveal { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s forwards; }
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        .project-img { width: 100%; height: 160px; object-fit: cover; border-radius: 1rem; margin-bottom: 1rem; }
     </style>
 </head>
 <body class="p-4 md:p-10">
@@ -34,94 +33,71 @@
 
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
         
-        <div class="bento-card p-8 md:col-span-3 reveal" style="animation-delay: 0.1s;">
-            <div class="flex items-center gap-6 mb-4">
-                <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-700 flex items-center justify-center text-3xl font-bold shadow-lg shadow-purple-500/20">CF</div>
-                <div>
-                    <h1 class="text-4xl font-bold tracking-tight">Clément <span class="gradient-text">Fabre</span></h1>
-                    <p class="text-indigo-400 font-medium">Apprenti Ingénieur Systèmes Embarqués & Électronique</p>
-                </div>
-            </div>
-            <p class="text-gray-400 leading-relaxed max-w-2xl">
-                Actuellement en alternance chez <b>Trescal (Renault Lardy)</b>. Spécialiste de la conception de bancs d'essais, de la programmation de microcontrôleurs et de l'automatisation industrielle.
-            </p>
-        </div>
-
-        <div class="bento-card p-6 md:col-span-1 reveal" style="animation-delay: 0.2s;">
-            <h3 class="font-bold mb-4 flex items-center gap-2 text-sm uppercase tracking-widest text-gray-500"><i data-lucide="cpu" class="w-4 h-4"></i> Expertise</h3>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[11px]">C/C++</span>
-                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[11px]">Python</span>
-                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[11px]">STM32</span>
-                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[11px]">Altium</span>
-                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[11px]">API</span>
-            </div>
-        </div>
-
-        <div class="bento-card p-6 md:col-span-2 reveal" style="animation-delay: 0.3s;">
-            <div class="flex justify-between items-start mb-4">
-                <div class="p-2 bg-green-500/10 rounded-lg"><i data-lucide="cog" class="text-green-500"></i></div>
-                <span class="text-[10px] font-bold text-green-500 bg-green-500/10 px-2 py-1 rounded">PROJET PRO</span>
-            </div>
+        <div class="bento-card p-8 md:col-span-3 flex flex-col md:flex-row gap-8 items-center">
+            <img src="https://i.postimg.cc/mD8P8YnK/photo-cv.png" alt="Clément Fabre" class="w-32 h-32 rounded-full border-4 border-purple-500/30 object-cover">
             <div>
-                <h3 class="text-xl font-bold mb-2">Automatisation Modules CSM</h3>
-                <p class="text-gray-400 text-sm mb-4">Développement sous Python pour automatiser la configuration et la communication des modules d'acquisition Trescal. Optimisation des procédures de test constructeur.</p>
+                <h1 class="text-4xl font-bold tracking-tight mb-2">Clément <span class="gradient-text">Fabre</span></h1>
+                <p class="text-indigo-400 font-medium mb-4 text-lg">Apprenti Ingénieur en Systèmes Embarqués & Électronique</p>
+                <p class="text-gray-400 leading-relaxed text-sm">
+                    Étudiant au <b>CESI S3E</b> après un BUT GEII. Passionné par l'analyse de circuits et la conception électronique, j'utilise une approche méthodique pour transformer des défis techniques en solutions innovantes.
+                </p>
             </div>
-            <div class="flex gap-2"><span class="text-[10px] text-gray-500">#Python #Industrie #Trescal</span></div>
         </div>
 
-        <div class="bento-card p-6 md:col-span-2 reveal" style="animation-delay: 0.4s;">
-            <div class="flex justify-between items-start mb-4">
-                <div class="p-2 bg-blue-500/10 rounded-lg"><i data-lucide="bluetooth" class="text-blue-500"></i></div>
-                <span class="text-[10px] font-bold text-blue-500 bg-blue-500/10 px-2 py-1 rounded">STM32</span>
+        <div class="bento-card p-6 md:col-span-1 flex flex-col justify-center items-center gap-4">
+            <h3 class="text-xs uppercase tracking-widest text-gray-500 font-bold">Me contacter</h3>
+            <div class="flex gap-4">
+                <a href="mailto:clementfabre3131@gmail.com" class="hover:text-purple-400 transition-colors"><i data-lucide="mail"></i></a>
+                <a href="https://linkedin.com/in/clement-fabre" class="hover:text-purple-400 transition-colors"><i data-lucide="linkedin"></i></a>
             </div>
-            <div>
-                <h3 class="text-xl font-bold mb-2">SmartCar Bluetooth</h3>
-                <p class="text-gray-400 text-sm mb-4">Conception intégrale d'un véhicule piloté par smartphone. Programmation C++ sur Nucleo, gestion d'asservissement moteurs et capteurs ultrason.</p>
+            <p class="text-[10px] text-gray-500">Toulouse, France</p>
+        </div>
+
+        <div class="bento-card p-6 md:col-span-2">
+            <img src="https://i.postimg.cc/Xv3w5k9x/smartcar-pcb.jpg" alt="PCB SmartCar" class="project-img">
+            <div class="flex justify-between items-center mb-2">
+                <h3 class="text-xl font-bold">Smart Car Bluetooth</h3>
+                <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded">STM32 / C++</span>
             </div>
-            <div class="flex gap-2"><span class="text-[10px] text-gray-500">#C++ #Hardware #Embedded</span></div>
+            <p class="text-gray-400 text-xs">Conception hardware du PCB et pilotage via Bluetooth. Gestion de l'anticollision et optimisation de l'autonomie.</p>
         </div>
 
-        <div class="bento-card p-6 md:col-span-1 reveal" style="animation-delay: 0.5s;">
-            <div class="p-2 bg-red-500/10 rounded-lg w-fit mb-4"><i data-lucide="activity" class="text-red-500"></i></div>
-            <h3 class="text-lg font-bold mb-2">Électrocardiogramme</h3>
-            <p class="text-gray-400 text-[12px] mb-4">Analyse de signaux faibles, filtrage analogique et traitement du signal cardiaque.</p>
-            <span class="text-[10px] text-red-400">#Biomédical #Filtrage</span>
+        <div class="bento-card p-6 md:col-span-2">
+            <img src="https://i.postimg.cc/7Z9rV7yG/ecg-circuit.jpg" alt="Circuit ECG" class="project-img">
+            <div class="flex justify-between items-center mb-2">
+                <h3 class="text-xl font-bold">Électrocardiogramme</h3>
+                <span class="text-[10px] bg-red-500/10 text-red-400 px-2 py-1 rounded">Médical / Filtrage</span>
+            </div>
+            <p class="text-gray-400 text-xs">Amplification et filtrage de signaux cardiaques. Élimination des interférences pour une précision médicale fiable.</p>
         </div>
 
-        <div class="bento-card p-6 md:col-span-1 reveal" style="animation-delay: 0.6s;">
-            <div class="p-2 bg-yellow-500/10 rounded-lg w-fit mb-4"><i data-lucide="spline" class="text-yellow-500"></i></div>
-            <h3 class="text-lg font-bold mb-2">Suiveur de Ligne</h3>
-            <p class="text-gray-400 text-[12px] mb-4">Robot autonome avec analyse de trajectoire via capteurs infrarouges et logique PID.</p>
-            <span class="text-[10px] text-yellow-400">#Robotique #Arduino</span>
+        <div class="bento-card p-6 md:col-span-2">
+            <img src="https://i.postimg.cc/L5K4X2Y4/suiveur-ligne.jpg" alt="Robot suiveur" class="project-img">
+            <div class="flex justify-between items-center mb-2">
+                <h3 class="text-xl font-bold">Robot Suiveur de Ligne</h3>
+                <span class="text-[10px] bg-yellow-500/10 text-yellow-400 px-2 py-1 rounded">Infrarouge</span>
+            </div>
+            <p class="text-gray-400 text-xs">Détection d'obstacles par capteurs IR et asservissement de trajectoire autonome.</p>
         </div>
 
-        <div class="bento-card p-6 md:col-span-2 reveal" style="animation-delay: 0.7s;">
-            <h3 class="font-bold mb-4 flex items-center gap-2"><i data-lucide="graduation-cap" class="w-4 h-4 text-purple-400"></i> Parcours</h3>
-            <div class="space-y-3">
-                <div class="flex justify-between border-l-2 border-purple-500/30 pl-4">
-                    <div><p class="text-sm font-bold">Ingénieur S3E - CESI</p><p class="text-[10px] text-gray-500">2025 - 2028</p></div>
+        <div class="bento-card p-6 md:col-span-2">
+            <h3 class="font-bold mb-4 flex items-center gap-2"><i data-lucide="graduation-cap" class="text-purple-400"></i> Parcours Académique</h3>
+            <div class="space-y-4">
+                <div class="border-l-2 border-purple-500/30 pl-4">
+                    <p class="text-sm font-bold">Cycle Ingénieur S3E</p>
+                    <p class="text-[10px] text-gray-500">CESI Toulouse | 2025 - 2028</p>
                 </div>
-                <div class="flex justify-between border-l-2 border-white/10 pl-4">
-                    <div><p class="text-sm font-bold">BUT GEII - Paul Sabatier</p><p class="text-[10px] text-gray-500">2023 - 2025</p></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="bento-card p-6 md:col-span-2 reveal" style="animation-delay: 0.8s;">
-            <div class="flex items-center gap-4">
-                <div class="p-3 bg-purple-500/20 rounded-full"><i data-lucide="camera" class="text-purple-400"></i></div>
-                <div>
-                    <h3 class="font-bold">Le "Plus" de Clément</h3>
-                    <p class="text-[12px] text-gray-400 leading-relaxed mt-1">
-                        Modèle amateur, j'ai développé une <b>aisance en public</b> et une confiance qui me servent lors de présentations techniques ou de gestion d'équipe.
-                    </p>
+                <div class="border-l-2 border-white/10 pl-4">
+                    <p class="text-sm font-bold">BUT GEII</p>
+                    <p class="text-[10px] text-gray-500">IUT Paul Sabatier | Promotion 2025</p>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <script>lucide.createIcons();</script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
