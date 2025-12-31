@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clément Fabre | Portfolio Ingénieur</title>
+    <title>Clément Fabre | Portfolio Dynamique</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { 
-            background-color: #030014; 
-            color: white; 
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow-y: scroll;
-        }
-        ::-webkit-scrollbar { width: 10px; }
+        body { background-color: #030014; color: white; font-family: 'Plus Jakarta Sans', sans-serif; overflow-y: scroll; }
+        
+        /* Personnalisation Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #030014; }
-        ::-webkit-scrollbar-thumb { background: #2e2a4a; border-radius: 5px; border: 2px solid #030014; }
-        ::-webkit-scrollbar-thumb:hover { background: #6366f1; }
+        ::-webkit-scrollbar-thumb { background: #2e2a4a; border-radius: 5px; }
 
         .bg-grid {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -25,25 +21,36 @@
                               linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
             background-size: 40px 40px; z-index: -1;
         }
+
         .bento-card {
             background: rgba(15, 15, 25, 0.7);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 2rem;
             backdrop-filter: blur(12px);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
         }
         .bento-card:hover { border-color: rgba(139, 92, 246, 0.5); transform: translateY(-5px); }
-        .gradient-text { background: linear-gradient(90deg, #a78bfa, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        .illustration-2d {
-            width: 100%; height: 180px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(167, 139, 250, 0.05));
-            display: flex; align-items: center; justify-content: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
 
-        .reveal { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s forwards; }
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        /* --- ANIMATIONS ÉLECTRONIQUES --- */
+        
+        /* Rotation (Ventilateur / Roues) */
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .animate-spin-custom { animation: spin 3s linear infinite; }
+
+        /* Signal ECG */
+        @keyframes ecg {
+            0% { stroke-dashoffset: 1000; opacity: 0; }
+            50% { opacity: 1; }
+            100% { stroke-dashoffset: 0; opacity: 0; }
+        }
+        .ecg-line { stroke-dasharray: 1000; animation: ecg 2s linear infinite; }
+
+        /* Pulsation */
+        @keyframes pulse-soft { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; } }
+        .animate-pulse-soft { animation: pulse-soft 2s infinite; }
+
+        .gradient-text { background: linear-gradient(90deg, #a78bfa, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
 <body class="p-4 md:p-10">
@@ -51,103 +58,104 @@
 
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 pb-24">
         
-        <div class="bento-card p-8 md:col-span-3 flex flex-col md:flex-row gap-8 items-center reveal">
-            <img src="moi.jpg" alt="Clément Fabre" class="w-32 h-32 rounded-full border-4 border-purple-500/30 object-cover shadow-2xl">
+        <div class="bento-card p-8 md:col-span-3 flex flex-col md:flex-row gap-8 items-center">
+            <div class="relative">
+                <img src="moi.jpg" alt="Profil" class="w-32 h-32 rounded-full border-4 border-purple-500/30 object-cover shadow-2xl">
+                <div class="absolute -bottom-2 -right-2 bg-green-500 w-5 h-5 rounded-full border-4 border-[#030014] animate-pulse"></div>
+            </div>
             <div>
-                <h1 class="text-4xl font-bold tracking-tight mb-2">Clément <span class="gradient-text">Fabre</span></h1>
-                <p class="text-indigo-400 font-medium mb-4 text-lg">Apprenti Ingénieur en Systèmes Embarqués & Électronique</p>
-                <p class="text-gray-400 leading-relaxed text-sm">
-                    Étudiant au CESI S3E après un BUT GEII. Actuellement en alternance chez Trescal, je me spécialise dans la conception de moyens d'essais et l'optimisation de processus de mesure par le code.
+                <h1 class="text-4xl font-bold tracking-tight mb-2 uppercase">Clément <span class="gradient-text">Fabre</span></h1>
+                <p class="text-indigo-400 font-medium mb-4 text-lg">Apprenti Ingénieur S3E | Électronique & Embarqué</p>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Futur ingénieur (2028). Actuellement chez <b>Trescal (Renault Lardy)</b>. Spécialiste de la conception de bancs d'essais et du traitement de données via Python. [cite: 18, 224]
                 </p>
             </div>
         </div>
 
-        <div class="bento-card p-6 md:col-span-1 flex flex-col justify-center items-center gap-6 reveal">
-            <div class="flex gap-6">
-                <a href="mailto:fabreclement498@gmail.com" class="p-3 bg-white/5 rounded-full hover:bg-indigo-500 transition-colors"><i data-lucide="mail"></i></a>
-                <a href="https://www.linkedin.com/in/cl%C3%A9ment-fabre-127822265/" target="_blank" class="p-3 bg-white/5 rounded-full hover:bg-indigo-500 transition-colors"><i data-lucide="linkedin"></i></a>
+        <div class="bento-card p-6 md:col-span-1 flex flex-col justify-center items-center gap-4">
+            <div class="flex gap-4">
+                <a href="mailto:fabreclement498@gmail.com" class="p-4 bg-white/5 rounded-2xl hover:bg-indigo-500 transition-all"><i data-lucide="mail"></i></a>
+                <a href="https://www.linkedin.com/in/cl%C3%A9ment-fabre-127822265/" target="_blank" class="p-4 bg-white/5 rounded-2xl hover:bg-indigo-500 transition-all"><i data-lucide="linkedin"></i></a>
             </div>
-            <p class="text-center text-[10px] font-bold text-gray-500 uppercase tracking-widest leading-tight">En recherche de<br>stage pour 2026</p>
+            <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest text-center leading-tight">Recherche de stage<br>Janvier 2026</p>
         </div>
 
-        <div class="bento-card p-8 md:col-span-4 reveal">
-            <h3 class="text-xl font-bold mb-6 flex items-center gap-3 text-indigo-400 uppercase tracking-wider"><i data-lucide="graduation-cap"></i> Parcours Académique</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="relative pl-6 border-l-2 border-indigo-500/50">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-indigo-500 rounded-full"></div>
-                    <p class="text-indigo-400 font-bold text-sm tracking-wider">2025 — 2028</p>
+        <div class="bento-card p-8 md:col-span-4">
+            <h3 class="text-xl font-bold mb-8 flex items-center gap-3 text-indigo-400 uppercase tracking-wider"><i data-lucide="graduation-cap"></i> Parcours</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="relative pl-8 border-l-2 border-indigo-500/50">
+                    <div class="absolute -left-[11px] top-0 w-5 h-5 bg-indigo-500 rounded-full border-4 border-[#030014]"></div>
+                    <p class="text-indigo-400 font-bold text-xs mb-1 uppercase tracking-tighter">2025 — 2028</p>
                     <h4 class="text-lg font-bold">Cycle Ingénieur - S3E</h4>
-                    <p class="text-gray-400 text-sm italic">CESI Toulouse — Systèmes Électriques & Électroniques</p>
+                    <p class="text-gray-400 text-sm">CESI Toulouse — Systèmes Électriques & Électroniques [cite: 227]</p>
                 </div>
-                <div class="relative pl-6 border-l-2 border-white/10">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-gray-700 rounded-full"></div>
-                    <p class="text-gray-500 font-bold text-sm tracking-wider">2023 — 2025</p>
-                    <h4 class="text-lg font-bold">BUT GEII</h4>
-                    <p class="text-gray-400 text-sm italic">IUT Paul Sabatier — Génie Électrique & Informatique Industrielle</p>
+                <div class="relative pl-8 border-l-2 border-white/10">
+                    <div class="absolute -left-[11px] top-0 w-5 h-5 bg-gray-700 rounded-full border-4 border-[#030014]"></div>
+                    <p class="text-gray-500 font-bold text-xs mb-1 uppercase tracking-tighter">2023 — 2025</p>
+                    <h4 class="text-lg font-bold text-gray-300">BUT GEII</h4>
+                    <p class="text-gray-500 text-sm">IUT Paul Sabatier — Génie Électrique & Informatique Industrielle [cite: 229]</p>
                 </div>
             </div>
         </div>
 
-        <div class="bento-card md:col-span-2 reveal">
-            <div class="illustration-2d">
-                <i data-lucide="terminal" class="w-16 h-16 text-green-400/50"></i>
+        <div class="bento-card md:col-span-2 group">
+            <div class="h-40 bg-gradient-to-br from-green-500/10 to-transparent flex items-center justify-center relative overflow-hidden">
+                <i data-lucide="fan" class="w-20 h-20 text-green-500/20 animate-spin-custom"></i>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <i data-lucide="settings" class="w-12 h-12 text-green-400 animate-pulse-soft"></i>
+                </div>
             </div>
             <div class="p-8">
                 <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-xl font-bold">Automatisation de Boîtiers</h3>
-                    <span class="text-[10px] bg-green-500/10 text-green-500 px-2 py-1 rounded border border-green-500/20">PYTHON</span>
+                    <h3 class="text-xl font-bold">Automatisation CSM</h3>
+                    <span class="text-[10px] bg-green-500/10 text-green-500 px-2 py-1 rounded border border-green-500/20 font-bold">PYTHON [cite: 269]</span>
                 </div>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    Développement d'outils de configuration et de vérification pour modules d'acquisition. Automatisation des processus de communication pour optimiser les temps de test chez Trescal.
-                </p>
+                <p class="text-gray-400 text-sm leading-relaxed">Automatisation de la configuration et communication de modules d'acquisition. Optimisation des gains de temps chez Trescal. [cite: 269]</p>
             </div>
         </div>
 
-        <div class="bento-card md:col-span-2 reveal">
-            <div class="illustration-2d">
-                <i data-lucide="car" class="w-16 h-16 text-indigo-400/50"></i>
+        <div class="bento-card md:col-span-2 group">
+            <div class="h-40 bg-gradient-to-br from-indigo-500/10 to-transparent flex items-center justify-center gap-8">
+                <i data-lucide="circle-dot" class="w-12 h-12 text-indigo-500/40 animate-spin-custom"></i>
+                <i data-lucide="car" class="w-16 h-16 text-indigo-400"></i>
+                <i data-lucide="circle-dot" class="w-12 h-12 text-indigo-500/40 animate-spin-custom"></i>
             </div>
             <div class="p-8">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-xl font-bold">Smart Car Bluetooth</h3>
-                    <span class="text-[10px] bg-indigo-500/10 text-indigo-400 px-2 py-1 rounded border border-indigo-500/20">STM32 / C++</span>
+                    <span class="text-[10px] bg-indigo-500/10 text-indigo-400 px-2 py-1 rounded border border-indigo-500/20 font-bold">STM32 / C++ [cite: 272]</span>
                 </div>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    Conception d'un véhicule piloté par Bluetooth. Programmation sur Nucleo pour l'asservissement des moteurs et la gestion des capteurs ultrasoniques.
-                </p>
+                <p class="text-gray-400 text-sm leading-relaxed">Pilotage via Bluetooth sur Nucleo. Gestion de l'asservissement moteur et des capteurs ultrasoniques. [cite: 27, 273]</p>
             </div>
         </div>
 
-        <div class="bento-card md:col-span-2 reveal">
-            <div class="illustration-2d">
-                <i data-lucide="activity" class="w-16 h-16 text-red-400/50"></i>
+        <div class="bento-card md:col-span-2">
+            <div class="h-40 bg-black/40 flex items-center justify-center">
+                <svg width="200" height="60" viewBox="0 0 200 60">
+                    <path class="ecg-line" d="M0 30 L60 30 L70 10 L85 50 L100 30 L200 30" fill="none" stroke="#ef4444" stroke-width="2" />
+                </svg>
             </div>
             <div class="p-8">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-xl font-bold">Électrocardiogramme</h3>
-                    <span class="text-[10px] bg-red-500/10 text-red-400 px-2 py-1 rounded border border-red-500/20">ÉLECTRONIQUE / FILTRAGE</span>
+                    <span class="text-[10px] bg-red-500/10 text-red-400 px-2 py-1 rounded border border-red-400/20 font-bold">ÉLECTRONIQUE [cite: 58]</span>
                 </div>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    Étude et réalisation d'un circuit d'acquisition cardiaque. Mise en œuvre d'amplification de précision et de filtrage pour le traitement de signaux bio-électriques.
-                </p>
+                <p class="text-gray-400 text-sm leading-relaxed">Conception d'un dispositif d'amplification et de filtrage pour signaux cardiaques bio-électriques. [cite: 59, 60]</p>
             </div>
         </div>
 
-        <div class="bento-card p-8 md:col-span-2 reveal">
+        <div class="bento-card p-8 md:col-span-2 flex flex-col justify-center">
             <h3 class="text-sm font-bold text-gray-500 uppercase mb-8 tracking-widest text-center">Expertise Technique</h3>
             <div class="flex flex-wrap justify-center gap-3">
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold">Python</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold">C / C++</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold">STM32 / Nucleo</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold">Analyse de circuits</span>
-                <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold">Métrologie</span>
+                <span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs hover:border-indigo-500 transition-all">Python [cite: 241, 269]</span>
+                <span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs hover:border-indigo-500 transition-all">C / C++ [cite: 241, 272]</span>
+                <span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs hover:border-indigo-500 transition-all">STM32 [cite: 272]</span>
+                <span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs hover:border-indigo-500 transition-all">Métrologie [cite: 252]</span>
             </div>
         </div>
 
     </div>
 
-    <script>
-        lucide.createIcons();
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
