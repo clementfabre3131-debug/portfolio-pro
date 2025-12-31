@@ -32,6 +32,30 @@
         }
         .bento-card:hover { border-color: rgba(139, 92, 246, 0.5); transform: translateY(-5px); }
 
+        /* KEYCAPS STYLING (Inspiré par image_c75e69.png) */
+        .keycap {
+            width: 70px; height: 70px;
+            border-radius: 12px;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            font-weight: bold; font-size: 10px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            position: relative;
+            box-shadow: 0 6px 0 rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .keycap:hover { transform: translateY(4px); box-shadow: 0 2px 0 rgba(0,0,0,0.8); }
+        .keycap i { width: 24px; height: 24px; margin-bottom: 4px; }
+
+        /* Couleurs des touches */
+        .key-python { background: #3776ab; color: white; }
+        .key-cpp { background: #00599c; color: white; }
+        .key-stm { background: #03234b; color: #fff; border: 1px solid #3eb1e0; }
+        .key-mesure { background: #f7931e; color: black; }
+        .key-c { background: #a8b9cc; color: black; }
+
         /* ANIMATIONS */
         @keyframes gear-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         .animate-gear { animation: gear-spin 4s linear infinite; }
@@ -67,7 +91,39 @@
                 <a href="mailto:fabreclement498@gmail.com" class="p-4 bg-white/5 rounded-2xl hover:bg-indigo-500 transition-all"><i data-lucide="mail"></i></a>
                 <a href="https://www.linkedin.com/in/cl%C3%A9ment-fabre-127822265/" target="_blank" class="p-4 bg-white/5 rounded-2xl hover:bg-indigo-500 transition-all"><i data-lucide="linkedin"></i></a>
             </div>
-            <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest text-center">Stage Janvier 2026</p>
+            <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest text-center leading-tight">Stage Janvier 2026</p>
+        </div>
+
+        <div class="bento-card p-8 md:col-span-4 bg-gradient-to-b from-transparent to-indigo-500/5">
+            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-10 text-center italic">Ma Stack Technique</h3>
+            <div class="flex flex-wrap justify-center gap-8 perspective-1000">
+                
+                <div class="keycap key-python">
+                    <i data-lucide="terminal"></i>
+                    <span>Py</span>
+                </div>
+                <div class="keycap key-c">
+                    <i data-lucide="code-2"></i>
+                    <span>C</span>
+                </div>
+                <div class="keycap key-cpp">
+                    <i data-lucide="binary"></i>
+                    <span>C++</span>
+                </div>
+                <div class="keycap key-stm">
+                    <i data-lucide="cpu"></i>
+                    <span>STM32</span>
+                </div>
+                <div class="keycap key-mesure">
+                    <i data-lucide="ruler"></i>
+                    <span>METRO</span>
+                </div>
+                <div class="keycap bg-indigo-600 text-white">
+                    <i data-lucide="microchip"></i>
+                    <span>NUCLEO</span>
+                </div>
+
+            </div>
         </div>
 
         <div class="bento-card p-8 md:col-span-4">
@@ -96,26 +152,8 @@
                 <i data-lucide="settings" class="w-20 h-20 text-green-400 animate-gear"></i>
             </div>
             <div class="p-8">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-xl font-bold">Automatisation Modules CSM</h3>
-                    <span class="text-[10px] bg-green-500/10 text-green-500 px-2 py-1 rounded border border-green-500/20 font-bold uppercase">Python</span>
-                </div>
-                <p class="text-gray-400 text-sm">Développement d'outils Python pour la vérification et communication automatique de modules d'acquisition.</p>
-            </div>
-        </div>
-
-        <div class="bento-card md:col-span-2">
-            <div class="h-40 bg-gradient-to-br from-indigo-500/10 to-transparent flex items-center justify-center gap-6">
-                <i data-lucide="circle-dot" class="w-10 h-10 text-indigo-500/30 animate-spin"></i>
-                <i data-lucide="car" class="w-16 h-16 text-indigo-400"></i>
-                <i data-lucide="circle-dot" class="w-10 h-10 text-indigo-500/30 animate-spin"></i>
-            </div>
-            <div class="p-8">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-xl font-bold">Smart Car Bluetooth</h3>
-                    <span class="text-[10px] bg-indigo-500/10 text-indigo-400 px-2 py-1 rounded border border-indigo-500/20 font-bold uppercase">STM32 / C++</span>
-                </div>
-                <p class="text-gray-400 text-sm">Conception matérielle et logicielle d'un véhicule télécommandé par microcontrôleurs.</p>
+                <h3 class="text-xl font-bold mb-4">Automatisation Modules CSM</h3>
+                <p class="text-gray-400 text-sm">Développement d'outils Python pour la vérification et communication automatique de modules d'acquisition industrielle.</p>
             </div>
         </div>
 
@@ -126,21 +164,9 @@
                 </svg>
             </div>
             <div class="p-8">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-xl font-bold">Électrocardiogramme</h3>
-                    <span class="text-[10px] bg-red-500/10 text-red-400 px-2 py-1 rounded border border-red-400/20 font-bold uppercase">Électronique</span>
-                </div>
-                <p class="text-gray-400 text-sm">Filtrage et amplification des signaux cardiaques pour éliminer les interférences.</p>
+                <h3 class="text-xl font-bold mb-4">Électrocardiogramme</h3>
+                <p class="text-gray-400 text-sm">Conception d'étages de filtrage et d'amplification pour signaux cardiaques bio-électriques.</p>
             </div>
-        </div>
-
-        <div class="bento-card p-8 md:col-span-2">
-            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">Soft Skills</h3>
-            <ul class="text-xs space-y-3 text-gray-400">
-                <li>• <strong>Organisation :</strong> Rigueur méthodique structurant mes projets.</li>
-                <li>• <strong>Précision :</strong> Garantie de la qualité des résultats obtenus.</li>
-                <li>• <strong>Communication :</strong> Travail collaboratif et partage d'idées.</li>
-            </ul>
         </div>
 
     </div>
