@@ -12,9 +12,8 @@
             background-color: #030014; 
             color: white; 
             font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow-y: scroll; /* Force la barre de défilement */
+            overflow-y: scroll;
         }
-        /* Style de la barre de défilement */
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: #030014; }
         ::-webkit-scrollbar-thumb { background: #2e2a4a; border-radius: 5px; border: 2px solid #030014; }
@@ -36,7 +35,6 @@
         .bento-card:hover { border-color: rgba(139, 92, 246, 0.5); transform: translateY(-5px); }
         .gradient-text { background: linear-gradient(90deg, #a78bfa, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        /* Illustration 2D style technique */
         .illustration-2d {
             width: 100%; height: 200px;
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(167, 139, 250, 0.05));
@@ -53,65 +51,44 @@
 
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 pb-24">
         
-        <div class="bento-card p-8 md:col-span-3 flex flex-col md:flex-row gap-8 items-center reveal" style="animation-delay: 0.1s;">
+        <div class="bento-card p-8 md:col-span-3 flex flex-col md:flex-row gap-8 items-center reveal">
             <img src="moi.jpg" alt="Clément Fabre" class="w-32 h-32 rounded-full border-4 border-purple-500/30 object-cover shadow-2xl">
             <div>
                 <h1 class="text-4xl font-bold tracking-tight mb-2">Clément <span class="gradient-text">Fabre</span></h1>
                 <p class="text-indigo-400 font-medium mb-4 text-lg">Apprenti Ingénieur en Systèmes Embarqués & Électronique</p>
                 <p class="text-gray-400 leading-relaxed text-sm">
-                    [cite_start]Étudiant au CESI S3E après un BUT GEII[cite: 17, 18, 227]. [cite_start]Spécialiste en analyse de circuits et conception électronique[cite: 18, 25, 61]. [cite_start]Actuellement en alternance chez <b>Trescal (Renault Lardy)</b> sur la conception de moyens d'essais pour batteries électriques[cite: 224, 247, 249].
+                    Étudiant au CESI S3E après un BUT GEII. Spécialiste en analyse de circuits et conception électronique. Actuellement en alternance chez Trescal sur la conception de moyens d'essais.
                 </p>
             </div>
         </div>
 
-        <div class="bento-card p-6 md:col-span-1 flex flex-col justify-center items-center gap-6 reveal" style="animation-delay: 0.2s;">
+        <div class="bento-card p-6 md:col-span-1 flex flex-col justify-center items-center gap-6 reveal">
             <div class="flex gap-6">
                 <a href="mailto:fabreclement498@gmail.com" class="p-3 bg-white/5 rounded-full hover:bg-indigo-500 transition-colors"><i data-lucide="mail"></i></a>
                 <a href="https://www.linkedin.com/in/cl%C3%A9ment-fabre-127822265/" target="_blank" class="p-3 bg-white/5 rounded-full hover:bg-indigo-500 transition-colors"><i data-lucide="linkedin"></i></a>
             </div>
-            [cite_start]<p class="text-center text-[10px] font-bold text-gray-500 uppercase tracking-widest">Recherche de stage<br>Janvier 2026 [cite: 221]</p>
+            <p class="text-center text-[10px] font-bold text-gray-500 uppercase tracking-widest">Disponible Janvier 2026</p>
         </div>
 
-        <div class="bento-card p-8 md:col-span-4 reveal" style="animation-delay: 0.3s;">
-            <h3 class="text-xl font-bold mb-6 flex items-center gap-3 font-semibold uppercase tracking-wider text-indigo-400"><i data-lucide="graduation-cap"></i> Parcours Académique</h3>
+        <div class="bento-card p-8 md:col-span-4 reveal">
+            <h3 class="text-xl font-bold mb-6 flex items-center gap-3 text-indigo-400 uppercase tracking-wider"><i data-lucide="graduation-cap"></i> Parcours Académique</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="relative pl-6 border-l-2 border-indigo-500/50">
                     <div class="absolute -left-[9px] top-0 w-4 h-4 bg-indigo-500 rounded-full"></div>
                     <p class="text-indigo-400 font-bold text-sm tracking-wider">2025 — 2028</p>
                     <h4 class="text-lg font-bold">Cycle Ingénieur - S3E</h4>
-                    [cite_start]<p class="text-gray-400 text-sm italic">CESI Toulouse — Systèmes Électriques & Électroniques [cite: 227]</p>
+                    <p class="text-gray-400 text-sm italic">CESI Toulouse — Systèmes Électriques & Électroniques</p>
                 </div>
                 <div class="relative pl-6 border-l-2 border-white/10">
                     <div class="absolute -left-[9px] top-0 w-4 h-4 bg-gray-700 rounded-full"></div>
                     <p class="text-gray-500 font-bold text-sm tracking-wider">2023 — 2025</p>
                     <h4 class="text-lg font-bold">BUT GEII</h4>
-                    [cite_start]<p class="text-gray-400 text-sm italic">IUT Paul Sabatier — Génie Électrique & Informatique Industrielle [cite: 229]</p>
+                    <p class="text-gray-400 text-sm italic">IUT Paul Sabatier — Génie Électrique & Informatique Industrielle</p>
                 </div>
             </div>
         </div>
 
-        <div class="bento-card p-8 md:col-span-4 reveal" style="animation-delay: 0.4s;">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
-                <h3 class="text-xl font-bold flex items-center gap-3 text-green-400 uppercase tracking-widest"><i data-lucide="briefcase"></i> Expérience Alternance</h3>
-                <span class="text-xs bg-green-500/10 text-green-500 border border-green-500/20 px-3 py-1 rounded-full font-bold">TRESCAL / RENAULT</span>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h4 class="font-bold text-lg mb-2">Ingénieur d'Études</h4>
-                    [cite_start]<p class="text-gray-400 text-sm leading-relaxed">Conception et pilotage de la modification d'un banc d'essai de cyclage batterie sur site client (Renault Lardy)[cite: 239, 247, 249]. [cite_start]Analyse technique des Power Electronic Blocks[cite: 248].</p>
-                </div>
-                <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
-                    <h5 class="font-bold text-xs uppercase text-gray-500 mb-4">Missions Clés</h5>
-                    <ul class="text-xs space-y-2 text-gray-300">
-                        [cite_start]<li class="flex gap-2">✔ Étude des simulateurs de batteries [cite: 247]</li>
-                        [cite_start]<li class="flex gap-2">✔ Pilotage de sous-traitants [cite: 224]</li>
-                        [cite_start]<li class="flex gap-2">✔ Diagnostic de pannes complexes [cite: 261]</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="bento-card md:col-span-2 reveal" style="animation-delay: 0.5s;">
+        <div class="bento-card md:col-span-2 reveal">
             <div class="illustration-2d">
                 <i data-lucide="car" class="w-16 h-16 text-indigo-400/50"></i>
             </div>
@@ -120,11 +97,13 @@
                     <h3 class="text-xl font-bold">Smart Car Bluetooth</h3>
                     <span class="text-[10px] bg-indigo-500/10 text-indigo-400 px-2 py-1 rounded border border-indigo-500/20">STM32 / C++</span>
                 </div>
-                [cite_start]<p class="text-gray-400 text-sm leading-relaxed">Conception matérielle et logicielle d'un véhicule télécommandé[cite: 27, 271, 273]. [cite_start]Programmation de microcontrôleurs et gestion de l'anticollision par Bluetooth[cite: 27, 273].</p>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Conception matérielle et logicielle d'un véhicule télécommandé. Programmation de microcontrôleurs et gestion de l'anticollision par Bluetooth.
+                </p>
             </div>
         </div>
 
-        <div class="bento-card md:col-span-2 reveal" style="animation-delay: 0.6s;">
+        <div class="bento-card md:col-span-2 reveal">
             <div class="illustration-2d">
                 <i data-lucide="heart-pulse" class="w-16 h-16 text-red-400/50"></i>
             </div>
@@ -133,19 +112,21 @@
                     <h3 class="text-xl font-bold">Électrocardiogramme</h3>
                     <span class="text-[10px] bg-red-500/10 text-red-400 px-2 py-1 rounded border border-red-500/20">Médical / Filtrage</span>
                 </div>
-                [cite_start]<p class="text-gray-400 text-sm leading-relaxed">Conception d'un dispositif médical pour l'amplification et le filtrage des signaux cardiaques afin d'éliminer les interférences[cite: 58, 59, 60].</p>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Conception d'un dispositif médical pour l'amplification et le filtrage des signaux cardiaques afin d'éliminer les interférences.
+                </p>
             </div>
         </div>
 
-        <div class="bento-card p-8 md:col-span-4 reveal" style="animation-delay: 0.7s;">
+        <div class="bento-card p-8 md:col-span-4 reveal">
             <h3 class="text-sm font-bold text-gray-500 uppercase mb-8 tracking-widest text-center">Expertise & Outils Techniques</h3>
             <div class="flex flex-wrap justify-center gap-4">
-                [cite_start]<span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold hover:border-indigo-500 transition-colors">C / C++ [cite: 28, 241, 61]</span>
-                [cite_start]<span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold hover:border-indigo-500 transition-colors">Python [cite: 28, 241, 269]</span>
-                [cite_start]<span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold hover:border-indigo-500 transition-colors">Altium Designer [cite: 235]</span>
-                [cite_start]<span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold hover:border-indigo-500 transition-colors">STM32 / Nucleo [cite: 272, 273]</span>
-                [cite_start]<span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold hover:border-indigo-500 transition-colors">Métrologie HF [cite: 156, 252]</span>
-                [cite_start]<span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold hover:border-indigo-500 transition-colors">Automatisme API [cite: 18, 147, 150]</span>
+                <span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold">C / C++</span>
+                <span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold">Python</span>
+                <span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold">Altium Designer</span>
+                <span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold">STM32 / Nucleo</span>
+                <span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold">Métrologie HF</span>
+                <span class="px-5 py-2 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold">Automatisme API</span>
             </div>
         </div>
 
